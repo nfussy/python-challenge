@@ -8,7 +8,9 @@ analysis = os.path.join("analysis", "analysis.txt")
 #open and read the budget csv file
 with open(election_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    next(csvreader)
+    
+    # Read the header row first (skip this part if there is no header)
+    csvheader = next(csvreader)
 
     #lists for storing the data
     ballot = []

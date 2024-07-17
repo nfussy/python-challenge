@@ -11,7 +11,6 @@ with open(budget_data) as csvfile:
 
     # Read the header row first (skip this part if there is no header)
     csvheader = next(csvreader)
-    print(f"Header: {csvheader}")
 
     #lists for storing the data
     profit_and_loss = []
@@ -34,7 +33,7 @@ with open(budget_data) as csvfile:
     #finding the largest increase in revenue
     greatest_inc = max(delta_rev)
     greatest_inc_mon = months[delta_rev.index(greatest_inc) + 1]
-    
+
     #finding the largest decrease in revenue
     greatest_dec = min(delta_rev)
     greatest_dec_mon = months[delta_rev.index(greatest_dec) + 1]
